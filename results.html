@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Score Result</title>
+    <link rel="stylesheet" href="results.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container">
+        <div class="score-header">
+            <h1>Risk Score:</h1>
+            <h1 id="risk-score">0</h1> <!-- Score will be updated dynamically -->
+        </div>
+
+        <div class="number-line-container">
+            <p>Risk Preference Scale</p>
+            <div class="number-line">
+                <!-- Label for Highly Risk Averse -->
+                <span class="label left-label">Highly Risk Averse</span>
+
+                <!-- Number line with key points -->
+                <div class="tick" style="left: 0%;">-10</div>
+                <div class="tick" style="left: 25%;">-5</div>
+                <div class="tick" style="left: 50%;">0</div>
+                <div class="tick" style="left: 75%;">5</div>
+                <div class="tick" style="left: 100%;">10</div>
+
+                <!-- Label for Least Risk Averse -->
+                <span class="label right-label">Least Risk Averse</span>
+
+                <!-- Marker for user score -->
+                <div id="score-marker"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="results.js"></script> <!-- Link to JavaScript -->
+</body>
+</html>

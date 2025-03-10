@@ -1,0 +1,112 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make the container fill the entire viewport */
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    /* Gradient background with subtle animation */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    animation: gradientAnimation 6s infinite alternate;
+}
+
+/* Background Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+    100% {
+        background: linear-gradient(to right, #2575fc, #6a11cb);
+    }
+}
+
+/* Apply Montserrat font to the entire body */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Center the button in the middle of the screen */
+.container {
+    display: flex;
+    justify-content: center;  /* Horizontally centers the content */
+    align-items: center;      /* Vertically centers the content */
+    flex-direction: column;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+/* Heading with glow effect */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stylish Button */
+.btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6a00, #ff4500);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase; /* Make the button text uppercase */
+    margin: 15px;
+    box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background: linear-gradient(45deg, #ff4500, #ff6a00);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255, 106, 0, 0.5);
+}
+
+/* Neumorphism Effect */
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a glowing effect */
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.2);
+    top: 0;
+    left: -100%;
+    transform: skewX(-30deg);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Button Shine Animation */
+.btn:hover::after {
+    left: 100%;
+}

@@ -1,0 +1,131 @@
+/* Smooth Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('A_professional_finance-themed_background_featuring.png') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Adding a semi-transparent overlay for better readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);  /* Soft blur effect */
+    background: rgba(255, 255, 255, 0.5); /* Light overlay */
+    z-index: 0;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.85); /* Soft glassmorphism */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Smooth animated heading */
+.heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0d47a1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 50px;
+    opacity: 1;
+    animation: moveHeading 1s ease-out forwards;
+}
+
+/* Heading animation */
+@keyframes moveHeading {
+    0% {
+        transform: scale(1.5);
+        opacity: 0;
+        top: 50%;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        top: 0;
+    }
+}
+
+/* Glassmorphism for questions */
+.question {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.question:hover {
+    transform: scale(1.02);
+}
+
+/* Typography Improvements */
+p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+label:hover {
+    color: #007bff;
+}
+
+/* Radio Button Styling */
+input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Stylish Buttons */
+button {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(to right, #0056b3, #003f7f);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
