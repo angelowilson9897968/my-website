@@ -1,106 +1,233 @@
+/* ✅ General Styling */
 body {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 0;
     padding: 20px;
-    background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #333;
 }
 
+/* ✅ Main Container */
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* ✅ Header */
 .score-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 700;
     color: #0d47a1;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
+/* ✅ Number Line Container */
 .number-line-container {
     margin-top: 20px;
     position: relative;
-    padding: 10px;
+    padding: 12px;
 }
 
-/* Gradient number line */
+/* ✅ Gradient Number Line */
 .number-line {
     position: relative;
     width: 100%;
-    height: 6px;
+    height: 10px;
     background: linear-gradient(to right, #4caf50, #ffeb3b, #f44336);
-    border-radius: 5px;
+    border-radius: 12px;
     margin-top: 10px;
     margin-bottom: 40px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Labels for risk levels */
+/* ✅ Labels for Risk Levels */
 .label {
     position: absolute;
     top: -35px;
     font-size: 14px;
-    font-weight: bold;
-    color: #333;
+    font-weight: 600;
+    color: #555;
     opacity: 0;
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 0.6s forwards;
 }
 
 .left-label {
-    left: 0%;
+    left: 0;
     transform: translateX(-10%);
     text-align: left;
 }
 
 .right-label {
-    right: 0%;
+    right: 0;
     transform: translateX(10%);
     text-align: right;
 }
 
-/* Tick marks */
+/* ✅ Tick Marks */
 .tick {
     position: absolute;
     bottom: -20px;
     font-size: 14px;
-    font-weight: bold;
-    color: #333;
+    font-weight: 500;
+    color: #555;
     transform: translateX(-50%);
 }
 
-/* Red marker for user's risk score */
+/* ✅ Red Marker for Score */
 #score-marker {
     position: absolute;
-    width: 14px;
-    height: 24px;
-    background: red;
-    top: -10px;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-    transition: left 0.5s ease-in-out;
+    width: 20px;
+    height: 30px;
+    background: #ff3d00;
+    top: -12px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(255, 61, 0, 0.6);
+    transition: left 0.4s ease;
 }
 
-/* Animation for labels */
+/* ✅ Animation for Labels */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-8px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ✅ Portfolio Table Styling */
+.portfolio-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-table th,
+.portfolio-table td {
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 15px;
+}
+
+.portfolio-table th {
+    background-color: #0d47a1;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.portfolio-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.portfolio-table tr:hover {
+    background-color: #e3f2fd;
+    transition: background-color 0.2s ease;
+}
+
+/* ✅ Asset Icon Styling */
+.asset-icon {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* ✅ Asset Category Styling */
+.asset-category {
+    font-size: 14px;
+    color: #757575;
+    margin-left: 5px;
+}
+
+/* ✅ Portfolio Details */
+.portfolio-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.portfolio-details p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ✅ Button Styling */
+.button {
+    background-color: #0d47a1;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #0b3c8a;
+    transform: translateY(-3px);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+/* ✅ Download Button Styling */
+.download-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.download-btn {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #4caf50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+    background: linear-gradient(45deg, #45a049, #4caf50);
+    transform: translateY(-3px);
+}
+
+.download-btn:active {
+    transform: translateY(2px);
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Smooth Transition Effect for All Elements */
+* {
+    transition: all 0.2s ease;
 }
