@@ -99,4 +99,5 @@ def get_portfolio():
 
 # ✅ Start the Flask Server
 if __name__ == '__main__':
-    app.run(debug=True)
+    # For local testing only. Gunicorn will be used in production.
+    app.run(host='0.0.0.0', port=5000)
