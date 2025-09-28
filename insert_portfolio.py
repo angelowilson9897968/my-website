@@ -8,10 +8,6 @@ cursor = conn.cursor()
 cursor.execute('SELECT id, asset_name FROM assets')
 assets = cursor.fetchall()
 
-# ✅ Check that the number of assets matches the allocation size
-num_assets = len(assets)
-print(f"Number of assets in database: {num_assets}")
-
 # ✅ Portfolio details for risk scores from -10 to 10
 risk_scores = list(range(-10, 11))
 expected_returns = [
@@ -63,15 +59,13 @@ for i in range(len(risk_scores)):
     
     portfolio_id = cursor.lastrowid
     
-    # ✅ Insert asset allocations
-    for j in range(num_assets):
-        if j < len(allocations):
-            allocation = allocations[j]
-            asset_id = assets[j][0]
-            cursor.execute('''
-                INSERT INTO portfolio_assets (portfolio_id, asset_id, allocation_percentage)
-                VALUES (?, ?, ?)
-            ''', (portfolio_id, asset_id, allocation))
+    # ✅ Insert asset allocations using zip
+    for asset, allocation in zip(assets, allocations):
+        asset_id = asset[0]
+        cursor.execute('''
+            INSERT INTO portfolio_assets (portfolio_id, asset_id, allocation_percentage)
+            VALUES (?, ?, ?)
+        ''', (portfolio_id, asset_id, allocation))
     
     print(f"✅ Portfolio for risk score {risk_score} inserted successfully!")
 
