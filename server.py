@@ -10,6 +10,19 @@ CORS(app) # Enables Cross-Origin Resource Sharing (CORS)
 def home():
     return send_from_directory('.', 'html.html')
 
+# ✅ Routes for all other HTML pages
+@app.route('/risk-profile.html')
+def risk_profile_page():
+    return send_from_directory('.', 'risk-profile.html')
+
+@app.route('/results.html')
+def results_page():
+    return send_from_directory('.', 'results.html')
+    
+@app.route('/project.html')
+def project_page():
+    return send_from_directory('.', 'project.html')
+
 # ✅ Endpoint to Handle Risk Score Submission
 @app.route('/submit', methods=['POST'])
 def submit():
