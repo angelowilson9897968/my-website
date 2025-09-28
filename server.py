@@ -1,14 +1,14 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import sqlite3
 
 app = Flask(__name__)
-CORS(app)  # Enables Cross-Origin Resource Sharing (CORS)
+CORS(app) # Enables Cross-Origin Resource Sharing (CORS)
 
-# ✅ Home Route to Check Server Status
+# ✅ Home Route to Serve HTML File
 @app.route('/')
 def home():
-    return "Flask server is running!"
+    return send_from_directory('.', 'html.html')
 
 # ✅ Endpoint to Handle Risk Score Submission
 @app.route('/submit', methods=['POST'])
